@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频帧动画</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.video-wrap {
+			width: 100%;
+			background: yellow;
+		}
+		.J-trigger {
+			position: absolute;
+			z-index: 4;
+			top: 30%;
+			left: 50%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="J-video-container" width="750" height="1206" class="video-wrap">
+		
+	</canvas> 
+	<button id="J-trigger">触发器</button>
+	<script src="/js/video-frame.js"></script>
+	<script>
+		var imgSeris = [
+			"http://localhost/image/1.jpg",
+			"http://localhost/image/2.jpg",
+			"http://localhost/image/3.jpg",
+			"http://localhost/image/4.jpg",
+			"http://localhost/image/5.jpg",
+			"http://localhost/image/6.jpg",
+			"http://localhost/image/7.jpg",
+			"http://localhost/image/8.jpg",
+			"http://localhost/image/9.jpg",
+			"http://localhost/image/10.jpg",
+			"http://localhost/image/11.jpg",
+			"http://localhost/image/12.jpg",
+			"http://localhost/image/13.jpg"
+		];
+		var xixi = new videoFrame({
+			videoWrap: document.getElementById("J-video-container"),
+			frameRadio: 1206/750,
+			trigger: document.getElementById("J-trigger"),
+			imgSeris: imgSeris,
+			interval: 84,
+			basePixelRadio: 2,
+			baseScreenWidth: 375,
+			mp3: [
+				{
+					src: "http://localhost/image/music-1.mp3",
+					startTime: 4000
+				}
+			],
+			unfinishCallback: function() {
+				alert("图片还没加载完~");
+			}
+		});
+	</script>
+</body>
+</html>
