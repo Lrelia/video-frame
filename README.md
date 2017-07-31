@@ -1,4 +1,4 @@
-##使用方法简介
+## 使用方法简介
 * 引入video-frame.js
 * 新建一个`videoFrame`对象，传入参数
     * videoWrap: 影像的视频框
